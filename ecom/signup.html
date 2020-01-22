@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<title>SignUp page</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" >
+<link rel="stylesheet" type="text/css" href="fashioniteCSS.css">
+</head>
+
+<body class="background"><hr>
+<div style="text-align:center;">
+<span style="color:gray;font-size:40px;">SignUp</span>
+<span style="float:right;">
+	<button type="button" id="login">LOGIN</button>
+</span>
+</div>
+<hr>
+<br>
+
+<div class="format">
+<form action="/server.js" method = "post"><br>
+Fname : <input id="fname" type="text" class="name" placeholder="First-name..." name="firstname" required >
+Lname : <input id="lname" type="text" placeholder="Sur-name..." name="lname" class="name" required ><br>
+Mobile no : <input id="mobileNo" type="text" placeholder="Enter mobile no..." name="mobileNo" class="input" required><br>
+Email-Id : <input id="email" type="text" placeholder="Enter your email..." name="email" class="input" required><br>
+Password : <input id="password" type="password" placeholder="New password..." name="password" class="input" required><br>
+<input type="button" onclick="getStoredUsers()" value="SignUp"  class="submit">
+</form>
+</div>
+
+<script>
+var users = [];
+var login = document.getElementById("login");
+
+login.addEventListener("click",function(){
+		window.open("/login.html","_self");
+	}
+);
+
+function addUserToArray(){
+	var obj = new Object();
+	obj.fname = document.getElementById("fname").value;
+	obj.lname = document.getElementById("lname").value;
+	obj.mobileno = document.getElementById("mobileNo").value;
+	obj.email = document.getElementById("email").value;
+	obj.pwd = document.getElementById("password").value;
+	
+	users.push(obj);
+	storeUsers(users);
+}
+	
+function storeUsers(users){
+	localStorage.userSignIN = JSON.stringify(users);
+}
+
+function getStoredUsers(){
+	if(!localStorage.userSignIN){
+		// default to empty array
+		localStorage.userSignIN = JSON.stringify([]);
+	}	
+	else{
+		users = JSON.parse(localStorage.userSignIN);
+	}	
+	
+	// validation for sign in  or not  ,, current sign in
+	var email = document.getElementById("email").value;
+	var pwd = document.getElementById("password").value;
+	if(email.length==0 || pwd.length==0){
+		alert("fill all the blanks, please!");
+		return;
+	}
+	for(var i=0;i<users.length;i++){
+		if(users[i].email==email){
+			alert("Email already exists!!!");
+			return;
+		}
+	}
+	addUserToArray();
+	alert("You have successfully sign-in");
+	window.open("/login.html","_self");}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+a:link,a:visited{
+	color:white;
+	font-size:20px;
+	text-align:right;
+	background-color:none;
+	text-decoration:none;
+	padding:0px;	/* distance between text and cell border*/
+	margin:10px;		/* distance between two cells */
+	display:inline-block;
+}
+a:active ,a:hover{
+	color:tomato;
+}
+#cc
+{
+	text-align:center;
+	background-color:white;
+	color:tomato;
+	/*font-size:26px;*/
+}
+div.x1{
+	/*width:500px;*/
+	margin:auto;
+	padding:10px;
+	/*border:3px solid green;*/
+}
+div.x2{
+	margin:auto;
+}
+
+.background{
+	background-color:powderblue;
+}
+h1.heading{
+	font-size:50px;
+	display:block;
+	text-align:center;
+	color:purple;
+	font-family:Comic Sans MS;
+}
+div.format{
+	text-align:center;
+	border:3px solid grey;
+	margin:auto;
+	width:50%;
+	font-size:30px;
+	padding:10px;
+	color:gray;
+	display:block;
+}
+.input{
+	height:40px;
+	width:400px;
+	padding:20px;
+	margin:20px;
+	font-size:16px;
+}
+.submit{
+	height:40px;
+	width:100px;
+	font-size:20px;
+	color:green;
+}
+.name{
+	height:40px;
+	width:150px;
+	font-size:16px;
+	padding :5px;
+	margin:20px;
+}
+
+
+
+
+
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+button {
+  font-size: 20px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover {
+  background-color: tomato;
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* USED TO CREATE FASHIONITEmotto
+.x2{
+	color:purple;
+	text-align:center;
+	font-size:50px;
+	font-family:Impact;
+}
+.x3{
+	font-family:Comic Sans MS;
+	text-align:center;
+	font-size:30px;
+}*/
+
+
+
+
+
+/*
+<button class="dropdown">Men 
+		<div class="dropdown-content">
+			<a href="">T-shirts</a>
+			<a href="">Shirts</a>
+			<a href="">Jeans</a>
+		</div>
+		</button>
+		<button class="dropdown">Women 
+		<div class="dropdown-content">
+			<a href="#">T-shirts</a>
+			<a href="#">Boots</a>
+			<a href="#">Jeans</a>
+		</div>
+		</button>
+		<button class="dropdown">Kid
+		<div class="dropdown-content">	
+		
+			<a href="#">T-shirts</a>
+			<a href="#">Boots</a>
+			<a href="#">Jeans</a>
+		</div>
+		</button>
+		
+*/

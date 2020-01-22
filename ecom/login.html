@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Login page</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" >
+	<link rel="stylesheet" type="text/css" href="fashioniteCSS.css">
+</head>
+
+<body class="background"> <hr>
+	<h1 class="heading"><span style="color:gray;">Login</h1><br><hr>
+	<br>
+	<div class="format">
+	<form action="/server.js" method="post"><br>
+		Email-Id : <input id="email" type="text" placeholder="Enter your email..." name="email" class="input" required> <br>
+		Password : <input id="password" type="password" placeholder="Enter your password..." name="password" class="input" required><br>
+		<input type="button" onclick="getStoredUsers()" value="Login"  class="submit">
+	</form>
+	</div>
+</body>
+
+<script>
+var users = [];
+
+
+function getStoredUsers(){
+	if(!localStorage.userSignIN){
+		// default to empty array
+		localStorage.userSignIN = JSON.stringify([]);
+	}	
+	else{
+		users = JSON.parse(localStorage.userSignIN);
+	}
+	
+	var e=document.getElementById("email").value;
+	var p=document.getElementById("password").value;
+	if(e=="admin@gmail.com" && p =="admin"){
+			alert("Admin logged in");
+			location.href = '/myproduct.html';
+			return;
+	}
+	localStorage.setItem("currEmail",e);
+	
+	var i;
+	for(i=0;i<users.length;i++){
+		if(users[i].email==e && users[i].pwd==p){
+			alert("Successfully logged-in");
+			location.href = '/viewProduct.html';
+			break;
+		}
+	}
+	if(i==users.length){
+		alert("Incorrect email id or password!!!");
+	}
+}
+</script>
+
+</html>
